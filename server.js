@@ -5,8 +5,8 @@ require("dotenv").config()
 const Ur = require('./models/user');
 const Bg = require('./models/blog');
 const Pt = require('./models/post');
-const user = require('./models/user');
-mongoose.connect(process.env.MONGODB_URI,{
+const path = require('path');
+mongoose.connect("mongodb://localhost:27017/users",{
     useNewUrlParser: true, useUnifiedTopology : true ,
     useCreateIndex : true, useFindAndModify : false
 })
@@ -16,7 +16,7 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 app.get("/",(req,res) => {
-    
+    res.sendFile(path.join(__dirname+'/index.html'))
 })
 // Route : Sign Up
 app.post('/signup', async (req,res)=>{
