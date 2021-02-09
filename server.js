@@ -6,7 +6,7 @@ const Ur = require('./models/user');
 const Bg = require('./models/blog');
 const Pt = require('./models/post');
 const path = require('path');
-mongoose.connect("mongodb://localhost:27017/users",{
+mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser: true, useUnifiedTopology : true ,
     useCreateIndex : true, useFindAndModify : false
 })
@@ -152,5 +152,6 @@ app.post('/all',async (req,res)=>{
         posts
     }).status(200)
 })
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () =>console.log("server started"))
+app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
