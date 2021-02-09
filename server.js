@@ -15,7 +15,9 @@ const app = express()
 
 app.use(cors());
 app.use(express.json());
-
+app.get("/",(req,res) => {
+    
+})
 // Route : Sign Up
 app.post('/signup', async (req,res)=>{
     const {email,username,password} = req.body;
