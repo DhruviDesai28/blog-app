@@ -1,7 +1,7 @@
-#Blog App Backend Server
+# Blog App Backend Server
 API: https://damp-anchorage-94127.herokuapp.com
 
-##Routes
+## Routes
 1. **Login**
 * Request Method : POST
 * body(JSON) : username , password
